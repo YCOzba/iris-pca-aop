@@ -46,7 +46,7 @@ PCA algoritması NumPy ile sıfırdan yazılmıştır ve sonuçları scikit-lear
 ## Kurulum
 
 ```bash
-git clone https://github.com/<kullanici-adi>/iris-pca-aop.git
+git clone https://github.com/YCOzba/iris-pca-aop.git
 cd iris-pca-aop
 python -m venv .venv
 # Windows: .venv\Scripts\activate   |   Linux/macOS: source .venv/bin/activate
