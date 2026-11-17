@@ -414,9 +414,7 @@ Sonuç: **33 test, hepsi başarılı.**
 
 | Ad Soyad | Öğrenci No |
 |----------|-----------|
-| _Ad Soyad 1_ | _Numara_ |
-| _Ad Soyad 2_ | _Numara_ |
-| _Ad Soyad 3_ | _Numara_ |
+| Mehmet Akif Gök | 1250505047 |
 
 ---
 
