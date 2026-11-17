@@ -1,0 +1,34 @@
+[
+  {
+    "senaryo": "Geçersiz n_components (doğrulama, pre)",
+    "sonuc": "Yakalandı: DataValidationError: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')"
+  },
+  {
+    "senaryo": "Eksik (NaN) veri (doğrulama, pre)",
+    "sonuc": "Yakalandı: DataValidationError: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')"
+  },
+  {
+    "senaryo": "Negatif ölçüm değeri (doğrulama, pre)",
+    "sonuc": "Yakalandı: DataValidationError: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')"
+  },
+  {
+    "senaryo": "Eğitilmemiş modelle dönüşüm (alan hatası)",
+    "sonuc": "Yakalandı: PCAError: PCA modeli henüz eğitilmedi; önce fit() çağrılmalı"
+  },
+  {
+    "senaryo": "Öznitelik sayısı uyuşmazlığı (doğrulama, pre)",
+    "sonuc": "Yakalandı: DataValidationError: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')"
+  },
+  {
+    "senaryo": "Geçici I/O hatası (yeniden deneme)",
+    "sonuc": "Kurtarıldı (hata yönetimi sayesinde devam edildi)"
+  },
+  {
+    "senaryo": "Grafik hatası (yedek davranış / fallback)",
+    "sonuc": "Kurtarıldı (hata yönetimi sayesinde devam edildi)"
+  },
+  {
+    "senaryo": "Beklenmeyen hata (PipelineError ile sarmalama)",
+    "sonuc": "Yakalandı: PipelineError <- ValueError: StandardScaler.fit çalışırken beklenmeyen hata oluştu (hata_tipi='ValueError', deneme=1)"
+  }
+]

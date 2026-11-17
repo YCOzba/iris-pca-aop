@@ -1,0 +1,115 @@
+{
+  "n_components": 2,
+  "ozdegerler": [
+    2.938085,
+    0.920165,
+    0.147742,
+    0.020854
+  ],
+  "aciklanan_varyans_orani": [
+    0.729624,
+    0.228508,
+    0.036689,
+    0.005179
+  ],
+  "kumulatif_varyans_orani": [
+    0.729624,
+    0.958132,
+    0.994821,
+    1.0
+  ],
+  "secilen_modelin_varyans_orani": 0.9581320720000163,
+  "yeniden_yapilandirma_mse": 0.041867927999983595,
+  "yuzde95_icin_gereken_bilesen": 2,
+  "bilesenler": {
+    "PC1": {
+      "sepal_length": 0.521066,
+      "sepal_width": -0.269347,
+      "petal_length": 0.580413,
+      "petal_width": 0.564857
+    },
+    "PC2": {
+      "sepal_length": 0.377418,
+      "sepal_width": 0.923296,
+      "petal_length": 0.024492,
+      "petal_width": 0.066942
+    },
+    "PC3": {
+      "sepal_length": 0.719566,
+      "sepal_width": -0.244382,
+      "petal_length": -0.142126,
+      "petal_width": -0.634273
+    },
+    "PC4": {
+      "sepal_length": -0.261286,
+      "sepal_width": 0.12351,
+      "petal_length": 0.801449,
+      "petal_width": -0.523597
+    }
+  },
+  "kovaryans_matrisi": [
+    [
+      1.006711,
+      -0.118359,
+      0.877604,
+      0.823431
+    ],
+    [
+      -0.118359,
+      1.006711,
+      -0.431316,
+      -0.368583
+    ],
+    [
+      0.877604,
+      -0.431316,
+      1.006711,
+      0.969328
+    ],
+    [
+      0.823431,
+      -0.368583,
+      0.969328,
+      1.006711
+    ]
+  ],
+  "sklearn_dogrulama": {
+    "sklearn_explained_variance_ratio": [
+      0.729624,
+      0.228508
+    ],
+    "bizim_explained_variance_ratio": [
+      0.729624,
+      0.228508
+    ],
+    "maks_varyans_orani_farki": 2.220446049250313e-16,
+    "maks_bilesen_farki": 6.661338147750939e-16,
+    "maks_skor_farki": 3.1086244689504383e-15,
+    "tolerans": 1e-08,
+    "eslesiyor": true
+  },
+  "on_isleme": {
+    "rows_before": 150,
+    "rows_after": 150,
+    "dropped_missing": 0,
+    "duplicate_rows": 1,
+    "outliers": {
+      "sepal_length": 0,
+      "sepal_width": 4,
+      "petal_length": 0,
+      "petal_width": 0
+    },
+    "scaler_mean": {
+      "sepal_length": 5.8433,
+      "sepal_width": 3.0573,
+      "petal_length": 3.758,
+      "petal_width": 1.1993
+    },
+    "scaler_std": {
+      "sepal_length": 0.8253,
+      "sepal_width": 0.4344,
+      "petal_length": 1.7594,
+      "petal_width": 0.7597
+    }
+  }
+}

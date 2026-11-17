@@ -1,0 +1,10 @@
+timestamp,method,error_type,message,handled,action,attempt
+2026-11-17T21:34:28.048,PCA.fit,DataValidationError,"n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')",False,raise,1
+2026-11-17T21:34:28.057,IrisPreprocessor.prepare,DataValidationError,"Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')",False,raise,1
+2026-11-17T21:34:28.066,IrisPreprocessor.prepare,DataValidationError,"Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')",False,raise,1
+2026-11-17T21:34:28.070,PCA.transform,PCAError,PCA modeli henüz eğitilmedi; önce fit() çağrılmalı,False,raise,1
+2026-11-17T21:34:28.081,PCA.transform,DataValidationError,"Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')",False,raise,1
+2026-11-17T21:34:28.085,IrisDataLoader.load,OSError,Ağ sürücüsüne geçici olarak erişilemedi,True,retry,1
+2026-11-17T21:34:28.136,IrisDataLoader.load,OSError,Ağ sürücüsüne geçici olarak erişilemedi,True,retry,2
+2026-11-17T21:34:28.260,IrisVisualizer.plot_correlation_matrix,KeyError,"""None of [Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='object')] are in the [columns]""",True,fallback,1
+2026-11-17T21:34:28.275,StandardScaler.fit,ValueError,could not convert string to float: 'bu bir matris değil',False,wrap,1

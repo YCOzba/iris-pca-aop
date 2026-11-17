@@ -1,0 +1,252 @@
+2026-11-17 21:34:23.933 | INFO     | iris_pca_aop | Iris PCA + AOP pipeline başlatılıyor (n_components=2)
+2026-11-17 21:34:23.934 | INFO     | iris_pca_aop.aop | -> [#1] IrisPCAPipeline.run başladı: Iris PCA iş akışının uçtan uca çalıştırılması
+2026-11-17 21:34:23.935 | INFO     | iris_pca_aop.aop |   -> [#2] IrisPCAPipeline.load_data başladı: ADIM 1 - Veri setinin yüklenmesi
+2026-11-17 21:34:23.944 | INFO     | iris_pca_aop.aop |     -> [#3] IrisDataLoader.load başladı: Iris veri setinin yüklenmesi
+2026-11-17 21:34:23.964 | DEBUG    | iris_pca_aop.aop |       [doğrulama:post] dataframe_bos_degil -> OK
+2026-11-17 21:34:23.967 | DEBUG    | iris_pca_aop.aop |       [doğrulama:post] sema_ve_sayisal_tipler -> OK
+2026-11-17 21:34:23.972 | DEBUG    | iris_pca_aop.aop |       [doğrulama:post] bilinen_tur_etiketleri -> OK
+2026-11-17 21:34:23.972 | DEBUG    | iris_pca_aop.aop |       [doğrulama:post] yeterli_ornek_sayisi -> OK
+2026-11-17 21:34:23.974 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisDataLoader.load: duvar=28.127 ms, cpu=31.250 ms
+2026-11-17 21:34:23.975 | INFO     | iris_pca_aop.aop |     <- [#3] IrisDataLoader.load tamamlandı (28.13 ms) | çıktı: DataFrame(150, 5)
+2026-11-17 21:34:23.977 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.load_data: duvar=32.314 ms, cpu=31.250 ms
+2026-11-17 21:34:23.977 | INFO     | iris_pca_aop.aop |   <- [#2] IrisPCAPipeline.load_data tamamlandı (32.31 ms) | çıktı: DataFrame(150, 5)
+2026-11-17 21:34:23.979 | INFO     | iris_pca_aop.aop |   -> [#4] IrisPCAPipeline.describe_data başladı: ADIM 2 - Veri setinin içeriğinin incelenmesi | girdi: DataFrame(150, 5)
+2026-11-17 21:34:23.980 | INFO     | iris_pca_aop.aop |     -> [#5] IrisDataLoader.describe başladı: Veri setinin hangi verileri kapsadığının çıkarılması | girdi: DataFrame(150, 5)
+2026-11-17 21:34:24.008 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisDataLoader.describe: duvar=27.253 ms, cpu=31.250 ms
+2026-11-17 21:34:24.009 | INFO     | iris_pca_aop.aop |     <- [#5] IrisDataLoader.describe tamamlandı (27.25 ms) | çıktı: DatasetSummary(...)
+2026-11-17 21:34:24.011 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.describe_data: duvar=30.927 ms, cpu=31.250 ms
+2026-11-17 21:34:24.012 | INFO     | iris_pca_aop.aop |   <- [#4] IrisPCAPipeline.describe_data tamamlandı (30.93 ms) | çıktı: DatasetSummary(...)
+2026-11-17 21:34:24.013 | INFO     | iris_pca_aop.aop |   -> [#6] IrisPCAPipeline.preprocess başladı: ADIM 3 - Ön işleme (temizlik, aykırı değer analizi, standardizasyon) | girdi: DataFrame(150, 5)
+2026-11-17 21:34:24.013 | INFO     | iris_pca_aop.aop |     -> [#7] IrisPreprocessor.prepare başladı: Veri setinin ön işlenmesi (temizlik + standardizasyon) | girdi: DataFrame(150, 5)
+2026-11-17 21:34:24.014 | DEBUG    | iris_pca_aop.aop |       [doğrulama:pre] dataframe_bos_degil -> OK
+2026-11-17 21:34:24.015 | DEBUG    | iris_pca_aop.aop |       [doğrulama:pre] sema_ve_sayisal_tipler -> OK
+2026-11-17 21:34:24.018 | DEBUG    | iris_pca_aop.aop |       [doğrulama:pre] eksik_deger_yok -> OK
+2026-11-17 21:34:24.019 | DEBUG    | iris_pca_aop.aop |       [doğrulama:pre] sonlu_ve_pozitif_olcum -> OK
+2026-11-17 21:34:24.021 | DEBUG    | iris_pca_aop.aop |       [doğrulama:pre] bilinen_tur_etiketleri -> OK
+2026-11-17 21:34:24.025 | INFO     | iris_pca_aop.aop |       -> [#8] StandardScaler.fit_transform başladı: Parametrelerin hesaplanıp verinin standardize edilmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.027 | INFO     | iris_pca_aop.aop |         -> [#9] StandardScaler.fit başladı: Standardizasyon parametrelerinin hesaplanması | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.028 | DEBUG    | iris_pca_aop.aop |            [zamanlama] StandardScaler.fit: duvar=0.249 ms, cpu=0.000 ms
+2026-11-17 21:34:24.029 | INFO     | iris_pca_aop.aop |         <- [#9] StandardScaler.fit tamamlandı (0.25 ms) | çıktı: <StandardScaler>
+2026-11-17 21:34:24.031 | INFO     | iris_pca_aop.aop |         -> [#10] StandardScaler.transform başladı: Verinin standardize edilmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.031 | DEBUG    | iris_pca_aop.aop |            [zamanlama] StandardScaler.transform: duvar=0.049 ms, cpu=0.000 ms
+2026-11-17 21:34:24.033 | INFO     | iris_pca_aop.aop |         <- [#10] StandardScaler.transform tamamlandı (0.05 ms) | çıktı: ndarray(150, 4):float64
+2026-11-17 21:34:24.034 | DEBUG    | iris_pca_aop.aop |          [zamanlama] StandardScaler.fit_transform: duvar=7.147 ms, cpu=15.625 ms
+2026-11-17 21:34:24.034 | INFO     | iris_pca_aop.aop |       <- [#8] StandardScaler.fit_transform tamamlandı (7.15 ms) | çıktı: ndarray(150, 4):float64
+2026-11-17 21:34:24.036 | INFO     | iris_pca_aop.aop |       -> [#11] IrisPreprocessor.detect_outliers başladı: IQR yöntemiyle aykırı değerlerin tespiti | girdi: DataFrame(150, 5)
+2026-11-17 21:34:24.045 | DEBUG    | iris_pca_aop.aop |          [zamanlama] IrisPreprocessor.detect_outliers: duvar=7.897 ms, cpu=0.000 ms
+2026-11-17 21:34:24.046 | INFO     | iris_pca_aop.aop |       <- [#11] IrisPreprocessor.detect_outliers tamamlandı (7.90 ms) | çıktı: dict(keys=4)
+2026-11-17 21:34:24.048 | DEBUG    | iris_pca_aop.aop |       [doğrulama:post] standardizasyon_kontrolu -> OK
+2026-11-17 21:34:24.048 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisPreprocessor.prepare: duvar=34.246 ms, cpu=46.875 ms
+2026-11-17 21:34:24.049 | INFO     | iris_pca_aop.aop |     <- [#7] IrisPreprocessor.prepare tamamlandı (34.25 ms) | çıktı: PreparedData(...)
+2026-11-17 21:34:24.050 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.preprocess: duvar=36.849 ms, cpu=46.875 ms
+2026-11-17 21:34:24.051 | INFO     | iris_pca_aop.aop |   <- [#6] IrisPCAPipeline.preprocess tamamlandı (36.85 ms) | çıktı: PreparedData(...)
+2026-11-17 21:34:24.051 | INFO     | iris_pca_aop.aop |   -> [#12] IrisPCAPipeline.apply_pca başladı: ADIM 4 - PCA analizinin uygulanması | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.052 | INFO     | iris_pca_aop.aop |     -> [#13] PCA.fit_transform başladı: PCA modelinin eğitilip verinin dönüştürülmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.053 | INFO     | iris_pca_aop.aop |       -> [#14] PCA.fit başladı: PCA modelinin eğitilmesi (kovaryans + özdeğer ayrışımı) | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.054 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:24.055 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] n_components_araligi -> OK
+2026-11-17 21:34:24.057 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] varyans_orani_gecerli -> OK
+2026-11-17 21:34:24.057 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] bilesenler_ortonormal -> OK
+2026-11-17 21:34:24.058 | DEBUG    | iris_pca_aop.aop |          [zamanlama] PCA.fit: duvar=4.109 ms, cpu=0.000 ms
+2026-11-17 21:34:24.059 | INFO     | iris_pca_aop.aop |       <- [#14] PCA.fit tamamlandı (4.11 ms) | çıktı: <PCA>
+2026-11-17 21:34:24.060 | INFO     | iris_pca_aop.aop |       -> [#15] PCA.transform başladı: Verinin temel bileşen uzayına izdüşürülmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.061 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:24.061 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] oznitelik_sayisi_uyumu -> OK
+2026-11-17 21:34:24.062 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] izdusum_boyutu -> OK
+2026-11-17 21:34:24.064 | DEBUG    | iris_pca_aop.aop |          [zamanlama] PCA.transform: duvar=2.570 ms, cpu=15.625 ms
+2026-11-17 21:34:24.064 | INFO     | iris_pca_aop.aop |       <- [#15] PCA.transform tamamlandı (2.57 ms) | çıktı: ndarray(150, 2):float64
+2026-11-17 21:34:24.065 | DEBUG    | iris_pca_aop.aop |        [zamanlama] PCA.fit_transform: duvar=12.035 ms, cpu=15.625 ms
+2026-11-17 21:34:24.065 | INFO     | iris_pca_aop.aop |     <- [#13] PCA.fit_transform tamamlandı (12.03 ms) | çıktı: ndarray(150, 2):float64
+2026-11-17 21:34:24.067 | INFO     | iris_pca_aop.aop |     -> [#16] PCA.fit_transform başladı: PCA modelinin eğitilip verinin dönüştürülmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.068 | INFO     | iris_pca_aop.aop |       -> [#17] PCA.fit başladı: PCA modelinin eğitilmesi (kovaryans + özdeğer ayrışımı) | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.069 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:24.070 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] n_components_araligi -> OK
+2026-11-17 21:34:24.071 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] varyans_orani_gecerli -> OK
+2026-11-17 21:34:24.072 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] bilesenler_ortonormal -> OK
+2026-11-17 21:34:24.073 | DEBUG    | iris_pca_aop.aop |          [zamanlama] PCA.fit: duvar=3.936 ms, cpu=0.000 ms
+2026-11-17 21:34:24.074 | INFO     | iris_pca_aop.aop |       <- [#17] PCA.fit tamamlandı (3.94 ms) | çıktı: <PCA>
+2026-11-17 21:34:24.075 | INFO     | iris_pca_aop.aop |       -> [#18] PCA.transform başladı: Verinin temel bileşen uzayına izdüşürülmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.075 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:24.078 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] oznitelik_sayisi_uyumu -> OK
+2026-11-17 21:34:24.078 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] izdusum_boyutu -> OK
+2026-11-17 21:34:24.079 | DEBUG    | iris_pca_aop.aop |          [zamanlama] PCA.transform: duvar=3.400 ms, cpu=15.625 ms
+2026-11-17 21:34:24.081 | INFO     | iris_pca_aop.aop |       <- [#18] PCA.transform tamamlandı (3.40 ms) | çıktı: ndarray(150, 4):float64
+2026-11-17 21:34:24.081 | DEBUG    | iris_pca_aop.aop |        [zamanlama] PCA.fit_transform: duvar=13.261 ms, cpu=15.625 ms
+2026-11-17 21:34:24.082 | INFO     | iris_pca_aop.aop |     <- [#16] PCA.fit_transform tamamlandı (13.26 ms) | çıktı: ndarray(150, 4):float64
+2026-11-17 21:34:24.083 | INFO     | iris_pca_aop.aop |     -> [#19] PCA.reconstruction_error başladı: Yeniden yapılandırma hatasının (MSE) hesaplanması | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.084 | INFO     | iris_pca_aop.aop |       -> [#20] PCA.transform başladı: Verinin temel bileşen uzayına izdüşürülmesi | girdi: ndarray(150, 4):float64
+2026-11-17 21:34:24.084 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:24.086 | DEBUG    | iris_pca_aop.aop |         [doğrulama:pre] oznitelik_sayisi_uyumu -> OK
+2026-11-17 21:34:24.087 | DEBUG    | iris_pca_aop.aop |         [doğrulama:post] izdusum_boyutu -> OK
+2026-11-17 21:34:24.088 | DEBUG    | iris_pca_aop.aop |          [zamanlama] PCA.transform: duvar=2.817 ms, cpu=0.000 ms
+2026-11-17 21:34:24.088 | INFO     | iris_pca_aop.aop |       <- [#20] PCA.transform tamamlandı (2.82 ms) | çıktı: ndarray(150, 2):float64
+2026-11-17 21:34:24.089 | INFO     | iris_pca_aop.aop |       -> [#21] PCA.inverse_transform başladı: Bileşen uzayından orijinal uzaya geri dönüş (yeniden yapılandırma) | girdi: ndarray(150, 2):float64
+2026-11-17 21:34:24.091 | DEBUG    | iris_pca_aop.aop |          [zamanlama] PCA.inverse_transform: duvar=0.057 ms, cpu=0.000 ms
+2026-11-17 21:34:24.091 | INFO     | iris_pca_aop.aop |       <- [#21] PCA.inverse_transform tamamlandı (0.06 ms) | çıktı: ndarray(150, 4):float64
+2026-11-17 21:34:24.092 | DEBUG    | iris_pca_aop.aop |        [zamanlama] PCA.reconstruction_error: duvar=8.328 ms, cpu=15.625 ms
+2026-11-17 21:34:24.093 | INFO     | iris_pca_aop.aop |     <- [#19] PCA.reconstruction_error tamamlandı (8.33 ms) | çıktı: 0.041867927999983595
+2026-11-17 21:34:24.094 | INFO     | iris_pca_aop.aop |     -> [#22] PCA.n_components_for_variance başladı: Verilen varyans oranını açıklamak için gereken minimum bileşen sayısı | girdi: 0.95
+2026-11-17 21:34:24.095 | DEBUG    | iris_pca_aop.aop |        [zamanlama] PCA.n_components_for_variance: duvar=0.086 ms, cpu=0.000 ms
+2026-11-17 21:34:24.096 | INFO     | iris_pca_aop.aop |     <- [#22] PCA.n_components_for_variance tamamlandı (0.09 ms) | çıktı: 2
+2026-11-17 21:34:24.097 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.apply_pca: duvar=44.442 ms, cpu=46.875 ms
+2026-11-17 21:34:24.097 | INFO     | iris_pca_aop.aop |   <- [#12] IrisPCAPipeline.apply_pca tamamlandı (44.44 ms) | çıktı: PCAOutcome(...)
+2026-11-17 21:34:24.098 | INFO     | iris_pca_aop.aop |   -> [#23] IrisPCAPipeline.verify_with_sklearn başladı: ADIM 5 - Sonuçların scikit-learn PCA ile doğrulanması | girdi: ndarray(150, 4):float64, PCAOutcome(...)
+2026-11-17 21:34:24.100 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.verify_with_sklearn: duvar=1.780 ms, cpu=0.000 ms
+2026-11-17 21:34:24.100 | INFO     | iris_pca_aop.aop |   <- [#23] IrisPCAPipeline.verify_with_sklearn tamamlandı (1.78 ms) | çıktı: dict(keys=7)
+2026-11-17 21:34:24.101 | INFO     | iris_pca_aop.aop |   -> [#24] IrisPCAPipeline.visualize başladı: ADIM 6 - Sonuçların görselleştirilmesi | girdi: DataFrame(150, 5), PreparedData(...), PCAOutcome(...)
+2026-11-17 21:34:24.101 | INFO     | iris_pca_aop.aop |     -> [#25] IrisVisualizer.plot_feature_distributions başladı: Özniteliklerin türlere göre dağılım grafiğinin çizilmesi | girdi: DataFrame(150, 5)
+2026-11-17 21:34:24.847 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_feature_distributions: duvar=743.970 ms, cpu=734.375 ms
+2026-11-17 21:34:24.847 | INFO     | iris_pca_aop.aop |     <- [#25] IrisVisualizer.plot_feature_distributions tamamlandı (743.97 ms) | çıktı: WindowsPath('outputs/figures/01_feature_distributions.png')
+2026-11-17 21:34:24.847 | INFO     | iris_pca_aop.aop |     -> [#26] IrisVisualizer.plot_scatter_matrix başladı: Öznitelik çiftlerinin saçılım matrisinin çizilmesi | girdi: DataFrame(150, 5)
+2026-11-17 21:34:26.296 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_scatter_matrix: duvar=1447.274 ms, cpu=1421.875 ms
+2026-11-17 21:34:26.297 | WARNING  | iris_pca_aop.aop | IrisVisualizer.plot_scatter_matrix yavaş çalıştı: 1447.3 ms > eşik 1000 ms
+2026-11-17 21:34:26.297 | INFO     | iris_pca_aop.aop |     <- [#26] IrisVisualizer.plot_scatter_matrix tamamlandı (1447.27 ms) | çıktı: WindowsPath('outputs/figures/02_scatter_matrix.png')
+2026-11-17 21:34:26.297 | INFO     | iris_pca_aop.aop |     -> [#27] IrisVisualizer.plot_correlation_matrix başladı: Öznitelikler arası korelasyon matrisinin çizilmesi | girdi: DataFrame(150, 5)
+2026-11-17 21:34:26.462 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_correlation_matrix: duvar=164.280 ms, cpu=156.250 ms
+2026-11-17 21:34:26.463 | INFO     | iris_pca_aop.aop |     <- [#27] IrisVisualizer.plot_correlation_matrix tamamlandı (164.28 ms) | çıktı: WindowsPath('outputs/figures/03_correlation_matrix.png')
+2026-11-17 21:34:26.464 | INFO     | iris_pca_aop.aop |     -> [#28] IrisVisualizer.plot_scree başladı: Açıklanan varyans (scree) grafiğinin çizilmesi | girdi: <PCA>
+2026-11-17 21:34:26.591 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_scree: duvar=126.963 ms, cpu=109.375 ms
+2026-11-17 21:34:26.592 | INFO     | iris_pca_aop.aop |     <- [#28] IrisVisualizer.plot_scree tamamlandı (126.96 ms) | çıktı: WindowsPath('outputs/figures/04_scree_plot.png')
+2026-11-17 21:34:26.592 | INFO     | iris_pca_aop.aop |     -> [#29] IrisVisualizer.plot_pca_2d başladı: İlk iki temel bileşen üzerinde 2B saçılım grafiğinin çizilmesi | girdi: ndarray(150, 4):float64, ndarray(150,):object, <PCA>
+2026-11-17 21:34:26.749 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_pca_2d: duvar=156.819 ms, cpu=156.250 ms
+2026-11-17 21:34:26.751 | INFO     | iris_pca_aop.aop |     <- [#29] IrisVisualizer.plot_pca_2d tamamlandı (156.82 ms) | çıktı: WindowsPath('outputs/figures/05_pca_2d.png')
+2026-11-17 21:34:26.751 | INFO     | iris_pca_aop.aop |     -> [#30] IrisVisualizer.plot_pca_3d başladı: İlk üç temel bileşen üzerinde 3B saçılım grafiğinin çizilmesi | girdi: ndarray(150, 4):float64, ndarray(150,):object, <PCA>
+2026-11-17 21:34:26.928 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_pca_3d: duvar=176.327 ms, cpu=156.250 ms
+2026-11-17 21:34:26.928 | INFO     | iris_pca_aop.aop |     <- [#30] IrisVisualizer.plot_pca_3d tamamlandı (176.33 ms) | çıktı: WindowsPath('outputs/figures/06_pca_3d.png')
+2026-11-17 21:34:26.930 | INFO     | iris_pca_aop.aop |     -> [#31] IrisVisualizer.plot_biplot başladı: Örnekler ve öznitelik yüklemelerini birlikte gösteren biplot çizimi | girdi: ndarray(150, 4):float64, ndarray(150,):object, <PCA>, ['sepal_length', 'sepal_width', 'petal_length', 'petal_wi...
+2026-11-17 21:34:27.115 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_biplot: duvar=185.509 ms, cpu=187.500 ms
+2026-11-17 21:34:27.116 | INFO     | iris_pca_aop.aop |     <- [#31] IrisVisualizer.plot_biplot tamamlandı (185.51 ms) | çıktı: WindowsPath('outputs/figures/07_biplot.png')
+2026-11-17 21:34:27.117 | INFO     | iris_pca_aop.aop |     -> [#32] IrisVisualizer.plot_loadings başladı: Bileşen yükleme matrisinin ısı haritasının çizilmesi | girdi: <PCA>, ['sepal_length', 'sepal_width', 'petal_length', 'petal_wi...
+2026-11-17 21:34:27.318 | DEBUG    | iris_pca_aop.aop |        [zamanlama] IrisVisualizer.plot_loadings: duvar=200.795 ms, cpu=203.125 ms
+2026-11-17 21:34:27.319 | INFO     | iris_pca_aop.aop |     <- [#32] IrisVisualizer.plot_loadings tamamlandı (200.80 ms) | çıktı: WindowsPath('outputs/figures/08_loadings_heatmap.png')
+2026-11-17 21:34:27.319 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.visualize: duvar=3217.551 ms, cpu=3125.000 ms
+2026-11-17 21:34:27.320 | WARNING  | iris_pca_aop.aop | IrisPCAPipeline.visualize yavaş çalıştı: 3217.6 ms > eşik 1000 ms
+2026-11-17 21:34:27.321 | INFO     | iris_pca_aop.aop |   <- [#24] IrisPCAPipeline.visualize tamamlandı (3217.55 ms) | çıktı: list(len=8)
+2026-11-17 21:34:27.322 | INFO     | iris_pca_aop.aop |   -> [#33] IrisPCAPipeline.export_results başladı: ADIM 7 - Sonuçların dosyaya aktarılması | girdi: DatasetSummary(...), PreparedData(...), PCAOutcome(...), dict(keys=7)
+2026-11-17 21:34:27.339 | DEBUG    | iris_pca_aop.aop |      [zamanlama] IrisPCAPipeline.export_results: duvar=16.525 ms, cpu=15.625 ms
+2026-11-17 21:34:27.340 | INFO     | iris_pca_aop.aop |   <- [#33] IrisPCAPipeline.export_results tamamlandı (16.53 ms) | çıktı: dict(keys=4)
+2026-11-17 21:34:27.341 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisPCAPipeline.run: duvar=3405.933 ms, cpu=3312.500 ms
+2026-11-17 21:34:27.342 | WARNING  | iris_pca_aop.aop | IrisPCAPipeline.run yavaş çalıştı: 3405.9 ms > eşik 1000 ms
+2026-11-17 21:34:27.343 | INFO     | iris_pca_aop.aop | <- [#1] IrisPCAPipeline.run tamamlandı (3405.93 ms) | çıktı: PipelineResult(...)
+2026-11-17 21:34:27.343 | INFO     | iris_pca_aop.aop | -> [#34] IrisVisualizer.plot_performance başladı: AOP ile toplanan performans metriklerinin grafiğinin çizilmesi | girdi: <MetricsRegistry>
+2026-11-17 21:34:28.023 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisVisualizer.plot_performance: duvar=678.146 ms, cpu=625.000 ms
+2026-11-17 21:34:28.024 | INFO     | iris_pca_aop.aop | <- [#34] IrisVisualizer.plot_performance tamamlandı (678.15 ms) | çıktı: WindowsPath('outputs/figures/09_performance_metrics.png')
+2026-11-17 21:34:28.032 | INFO     | iris_pca_aop | 9 grafik kaydedildi: outputs\figures
+2026-11-17 21:34:28.033 | INFO     | iris_pca_aop.aop | -> [#35] IrisDataLoader.load başladı: Iris veri setinin yüklenmesi
+2026-11-17 21:34:28.040 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] dataframe_bos_degil -> OK
+2026-11-17 21:34:28.042 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] sema_ve_sayisal_tipler -> OK
+2026-11-17 21:34:28.042 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] bilinen_tur_etiketleri -> OK
+2026-11-17 21:34:28.043 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] yeterli_ornek_sayisi -> OK
+2026-11-17 21:34:28.044 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisDataLoader.load: duvar=9.753 ms, cpu=0.000 ms
+2026-11-17 21:34:28.045 | INFO     | iris_pca_aop.aop | <- [#35] IrisDataLoader.load tamamlandı (9.75 ms) | çıktı: DataFrame(150, 5)
+2026-11-17 21:34:28.045 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.045 | INFO     | iris_pca_aop.demo | SENARYO: Geçersiz n_components (doğrulama, pre)
+2026-11-17 21:34:28.046 | INFO     | iris_pca_aop.aop | -> [#36] PCA.fit başladı: PCA modelinin eğitilmesi (kovaryans + özdeğer ayrışımı) | girdi: ndarray(20, 4):float64
+2026-11-17 21:34:28.046 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:28.047 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] n_components_araligi -> İHLAL: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4')
+2026-11-17 21:34:28.048 | ERROR    | iris_pca_aop.aop | ! PCA.fit alan hatası: DataValidationError: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')
+2026-11-17 21:34:28.050 | DEBUG    | iris_pca_aop.aop |    [zamanlama] PCA.fit: duvar=3.253 ms, cpu=0.000 ms
+2026-11-17 21:34:28.051 | ERROR    | iris_pca_aop.aop | x- [#36] PCA.fit BAŞARISIZ: DataValidationError: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')
+2026-11-17 21:34:28.052 | INFO     | iris_pca_aop.demo | SONUÇ: Yakalandı: DataValidationError: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')
+2026-11-17 21:34:28.052 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.052 | INFO     | iris_pca_aop.demo | SENARYO: Eksik (NaN) veri (doğrulama, pre)
+2026-11-17 21:34:28.053 | INFO     | iris_pca_aop.aop | -> [#37] IrisPreprocessor.prepare başladı: Veri setinin ön işlenmesi (temizlik + standardizasyon) | girdi: DataFrame(150, 5)
+2026-11-17 21:34:28.053 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] dataframe_bos_degil -> OK
+2026-11-17 21:34:28.054 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] sema_ve_sayisal_tipler -> OK
+2026-11-17 21:34:28.055 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] eksik_deger_yok -> İHLAL: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3})
+2026-11-17 21:34:28.057 | ERROR    | iris_pca_aop.aop | ! IrisPreprocessor.prepare alan hatası: DataValidationError: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')
+2026-11-17 21:34:28.058 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisPreprocessor.prepare: duvar=4.541 ms, cpu=0.000 ms
+2026-11-17 21:34:28.058 | ERROR    | iris_pca_aop.aop | x- [#37] IrisPreprocessor.prepare BAŞARISIZ: DataValidationError: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')
+2026-11-17 21:34:28.059 | INFO     | iris_pca_aop.demo | SONUÇ: Yakalandı: DataValidationError: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')
+2026-11-17 21:34:28.060 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.060 | INFO     | iris_pca_aop.demo | SENARYO: Negatif ölçüm değeri (doğrulama, pre)
+2026-11-17 21:34:28.061 | INFO     | iris_pca_aop.aop | -> [#38] IrisPreprocessor.prepare başladı: Veri setinin ön işlenmesi (temizlik + standardizasyon) | girdi: DataFrame(150, 5)
+2026-11-17 21:34:28.061 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] dataframe_bos_degil -> OK
+2026-11-17 21:34:28.061 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] sema_ve_sayisal_tipler -> OK
+2026-11-17 21:34:28.063 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] eksik_deger_yok -> OK
+2026-11-17 21:34:28.065 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] sonlu_ve_pozitif_olcum -> İHLAL: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1)
+2026-11-17 21:34:28.066 | ERROR    | iris_pca_aop.aop | ! IrisPreprocessor.prepare alan hatası: DataValidationError: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')
+2026-11-17 21:34:28.067 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisPreprocessor.prepare: duvar=5.538 ms, cpu=15.625 ms
+2026-11-17 21:34:28.067 | ERROR    | iris_pca_aop.aop | x- [#38] IrisPreprocessor.prepare BAŞARISIZ: DataValidationError: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')
+2026-11-17 21:34:28.068 | INFO     | iris_pca_aop.demo | SONUÇ: Yakalandı: DataValidationError: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')
+2026-11-17 21:34:28.068 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.069 | INFO     | iris_pca_aop.demo | SENARYO: Eğitilmemiş modelle dönüşüm (alan hatası)
+2026-11-17 21:34:28.069 | INFO     | iris_pca_aop.aop | -> [#39] PCA.transform başladı: Verinin temel bileşen uzayına izdüşürülmesi | girdi: ndarray(20, 4):float64
+2026-11-17 21:34:28.070 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:28.070 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] oznitelik_sayisi_uyumu -> OK
+2026-11-17 21:34:28.070 | ERROR    | iris_pca_aop.aop | ! PCA.transform alan hatası: PCAError: PCA modeli henüz eğitilmedi; önce fit() çağrılmalı
+2026-11-17 21:34:28.072 | DEBUG    | iris_pca_aop.aop |    [zamanlama] PCA.transform: duvar=2.424 ms, cpu=0.000 ms
+2026-11-17 21:34:28.072 | ERROR    | iris_pca_aop.aop | x- [#39] PCA.transform BAŞARISIZ: PCAError: PCA modeli henüz eğitilmedi; önce fit() çağrılmalı
+2026-11-17 21:34:28.073 | INFO     | iris_pca_aop.demo | SONUÇ: Yakalandı: PCAError: PCA modeli henüz eğitilmedi; önce fit() çağrılmalı
+2026-11-17 21:34:28.074 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.074 | INFO     | iris_pca_aop.demo | SENARYO: Öznitelik sayısı uyuşmazlığı (doğrulama, pre)
+2026-11-17 21:34:28.075 | INFO     | iris_pca_aop.aop | -> [#40] PCA.fit başladı: PCA modelinin eğitilmesi (kovaryans + özdeğer ayrışımı) | girdi: ndarray(20, 4):float64
+2026-11-17 21:34:28.075 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:28.076 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] n_components_araligi -> OK
+2026-11-17 21:34:28.076 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] varyans_orani_gecerli -> OK
+2026-11-17 21:34:28.077 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] bilesenler_ortonormal -> OK
+2026-11-17 21:34:28.077 | DEBUG    | iris_pca_aop.aop |    [zamanlama] PCA.fit: duvar=2.685 ms, cpu=15.625 ms
+2026-11-17 21:34:28.078 | INFO     | iris_pca_aop.aop | <- [#40] PCA.fit tamamlandı (2.68 ms) | çıktı: <PCA>
+2026-11-17 21:34:28.079 | INFO     | iris_pca_aop.aop | -> [#41] PCA.transform başladı: Verinin temel bileşen uzayına izdüşürülmesi | girdi: ndarray(20, 3):float64
+2026-11-17 21:34:28.079 | DEBUG    | iris_pca_aop.aop |   [doğrulama:pre] sonlu_sayisal_matris -> OK
+2026-11-17 21:34:28.080 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] oznitelik_sayisi_uyumu -> İHLAL: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3)
+2026-11-17 21:34:28.081 | ERROR    | iris_pca_aop.aop | ! PCA.transform alan hatası: DataValidationError: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')
+2026-11-17 21:34:28.082 | DEBUG    | iris_pca_aop.aop |    [zamanlama] PCA.transform: duvar=2.424 ms, cpu=0.000 ms
+2026-11-17 21:34:28.082 | ERROR    | iris_pca_aop.aop | x- [#41] PCA.transform BAŞARISIZ: DataValidationError: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')
+2026-11-17 21:34:28.083 | INFO     | iris_pca_aop.demo | SONUÇ: Yakalandı: DataValidationError: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')
+2026-11-17 21:34:28.084 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.084 | INFO     | iris_pca_aop.demo | SENARYO: Geçici I/O hatası (yeniden deneme)
+2026-11-17 21:34:28.085 | INFO     | iris_pca_aop.aop | -> [#42] IrisDataLoader.load başladı: Iris veri setinin yüklenmesi
+2026-11-17 21:34:28.085 | WARNING  | iris_pca_aop.aop | ! IrisDataLoader.load geçici hata (OSError: Ağ sürücüsüne geçici olarak erişilemedi) -> 2. deneme 0.05 sn sonra
+2026-11-17 21:34:28.136 | WARNING  | iris_pca_aop.aop | ! IrisDataLoader.load geçici hata (OSError: Ağ sürücüsüne geçici olarak erişilemedi) -> 3. deneme 0.10 sn sonra
+2026-11-17 21:34:28.247 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] dataframe_bos_degil -> OK
+2026-11-17 21:34:28.248 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] sema_ve_sayisal_tipler -> OK
+2026-11-17 21:34:28.250 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] bilinen_tur_etiketleri -> OK
+2026-11-17 21:34:28.251 | DEBUG    | iris_pca_aop.aop |   [doğrulama:post] yeterli_ornek_sayisi -> OK
+2026-11-17 21:34:28.251 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisDataLoader.load: duvar=167.487 ms, cpu=15.625 ms
+2026-11-17 21:34:28.253 | INFO     | iris_pca_aop.aop | <- [#42] IrisDataLoader.load tamamlandı (167.49 ms) | çıktı: DataFrame(150, 5)
+2026-11-17 21:34:28.254 | INFO     | iris_pca_aop.demo | Geçici hatadan sonra veri yüklendi: 150 satır
+2026-11-17 21:34:28.256 | INFO     | iris_pca_aop.demo | SONUÇ: Kurtarıldı (hata yönetimi sayesinde devam edildi)
+2026-11-17 21:34:28.257 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.257 | INFO     | iris_pca_aop.demo | SENARYO: Grafik hatası (yedek davranış / fallback)
+2026-11-17 21:34:28.259 | INFO     | iris_pca_aop.aop | -> [#43] IrisVisualizer.plot_correlation_matrix başladı: Öznitelikler arası korelasyon matrisinin çizilmesi | girdi: DataFrame(2, 1)
+2026-11-17 21:34:28.260 | ERROR    | iris_pca_aop.aop | ! IrisVisualizer.plot_correlation_matrix başarısız oldu, yedek davranış uygulanıyor: KeyError: "None of [Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='object')] are in the [columns]"
+Traceback (most recent call last):
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\aspects\error_handling_aspect.py", line 93, in around
+    return proceed()
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 65, in <lambda>
+    return aspects[index].around(jp, lambda: invoke(index + 1))
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 63, in invoke
+    return func(target, *jp.args, **jp.kwargs)
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\visualization\plots.py", line 87, in plot_correlation_matrix
+    corr = frame[FEATURE_COLUMNS].corr().to_numpy()
+  File "C:\Python310\lib\site-packages\pandas\core\frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+  File "C:\Python310\lib\site-packages\pandas\core\indexes\base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Python310\lib\site-packages\pandas\core\indexes\base.py", line 6261, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='object')] are in the [columns]"
+2026-11-17 21:34:28.268 | DEBUG    | iris_pca_aop.aop |    [zamanlama] IrisVisualizer.plot_correlation_matrix: duvar=9.136 ms, cpu=15.625 ms
+2026-11-17 21:34:28.269 | INFO     | iris_pca_aop.aop | <- [#43] IrisVisualizer.plot_correlation_matrix tamamlandı (9.14 ms)
+2026-11-17 21:34:28.270 | INFO     | iris_pca_aop.demo | Grafik çizilemedi ama pipeline devam etti (dönen değer: None)
+2026-11-17 21:34:28.271 | INFO     | iris_pca_aop.demo | SONUÇ: Kurtarıldı (hata yönetimi sayesinde devam edildi)
+2026-11-17 21:34:28.272 | INFO     | iris_pca_aop.demo | ======================================================================
+2026-11-17 21:34:28.273 | INFO     | iris_pca_aop.demo | SENARYO: Beklenmeyen hata (PipelineError ile sarmalama)
+2026-11-17 21:34:28.274 | INFO     | iris_pca_aop.aop | -> [#44] StandardScaler.fit başladı: Standardizasyon parametrelerinin hesaplanması | girdi: 'bu bir matris değil'
+2026-11-17 21:34:28.275 | ERROR    | iris_pca_aop.aop | ! StandardScaler.fit beklenmeyen hata: ValueError: could not convert string to float: 'bu bir matris değil'
+Traceback (most recent call last):
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\aspects\error_handling_aspect.py", line 93, in around
+    return proceed()
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 65, in <lambda>
+    return aspects[index].around(jp, lambda: invoke(index + 1))
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 63, in invoke
+    return func(target, *jp.args, **jp.kwargs)
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\data\preprocessing.py", line 29, in fit
+    X = np.asarray(X, dtype=float)
+ValueError: could not convert string to float: 'bu bir matris değil'
+2026-11-17 21:34:28.279 | DEBUG    | iris_pca_aop.aop |    [zamanlama] StandardScaler.fit: duvar=3.950 ms, cpu=0.000 ms
+2026-11-17 21:34:28.281 | ERROR    | iris_pca_aop.aop | x- [#44] StandardScaler.fit BAŞARISIZ: PipelineError: StandardScaler.fit çalışırken beklenmeyen hata oluştu (hata_tipi='ValueError', deneme=1)
+2026-11-17 21:34:28.281 | INFO     | iris_pca_aop.demo | SONUÇ: Yakalandı: PipelineError <- ValueError: StandardScaler.fit çalışırken beklenmeyen hata oluştu (hata_tipi='ValueError', deneme=1)
+2026-11-17 21:34:28.305 | INFO     | iris_pca_aop | Performans metrikleri kaydedildi: outputs\metrics\performance_metrics.json, outputs\metrics\method_summary.csv, outputs\metrics\call_log.csv, outputs\metrics\error_log.csv, outputs\metrics\validation_log.csv
+2026-11-17 21:34:28.306 | INFO     | iris_pca_aop | Loglar: C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\logs

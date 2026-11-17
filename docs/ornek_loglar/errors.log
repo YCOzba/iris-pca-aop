@@ -1,0 +1,48 @@
+2026-11-17 21:34:26.297 | WARNING  | iris_pca_aop.aop | IrisVisualizer.plot_scatter_matrix yavaş çalıştı: 1447.3 ms > eşik 1000 ms
+2026-11-17 21:34:27.320 | WARNING  | iris_pca_aop.aop | IrisPCAPipeline.visualize yavaş çalıştı: 3217.6 ms > eşik 1000 ms
+2026-11-17 21:34:27.342 | WARNING  | iris_pca_aop.aop | IrisPCAPipeline.run yavaş çalıştı: 3405.9 ms > eşik 1000 ms
+2026-11-17 21:34:28.047 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] n_components_araligi -> İHLAL: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4')
+2026-11-17 21:34:28.048 | ERROR    | iris_pca_aop.aop | ! PCA.fit alan hatası: DataValidationError: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')
+2026-11-17 21:34:28.051 | ERROR    | iris_pca_aop.aop | x- [#36] PCA.fit BAŞARISIZ: DataValidationError: n_components 1 ile min(örnek, öznitelik) arasında bir tam sayı olmalı (n_components=10, izin_verilen_aralik='1..4', kural='n_components_araligi', asama='pre')
+2026-11-17 21:34:28.055 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] eksik_deger_yok -> İHLAL: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3})
+2026-11-17 21:34:28.057 | ERROR    | iris_pca_aop.aop | ! IrisPreprocessor.prepare alan hatası: DataValidationError: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')
+2026-11-17 21:34:28.058 | ERROR    | iris_pca_aop.aop | x- [#37] IrisPreprocessor.prepare BAŞARISIZ: DataValidationError: Eksik (NaN) değer bulundu (eksik_degerler={'petal_width': 3}, kural='eksik_deger_yok', asama='pre')
+2026-11-17 21:34:28.065 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] sonlu_ve_pozitif_olcum -> İHLAL: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1)
+2026-11-17 21:34:28.066 | ERROR    | iris_pca_aop.aop | ! IrisPreprocessor.prepare alan hatası: DataValidationError: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')
+2026-11-17 21:34:28.067 | ERROR    | iris_pca_aop.aop | x- [#38] IrisPreprocessor.prepare BAŞARISIZ: DataValidationError: Çiçek ölçümleri pozitif olmalı (cm) (hatali_hucre=1, kural='sonlu_ve_pozitif_olcum', asama='pre')
+2026-11-17 21:34:28.070 | ERROR    | iris_pca_aop.aop | ! PCA.transform alan hatası: PCAError: PCA modeli henüz eğitilmedi; önce fit() çağrılmalı
+2026-11-17 21:34:28.072 | ERROR    | iris_pca_aop.aop | x- [#39] PCA.transform BAŞARISIZ: PCAError: PCA modeli henüz eğitilmedi; önce fit() çağrılmalı
+2026-11-17 21:34:28.080 | WARNING  | iris_pca_aop.aop |   [doğrulama:pre] oznitelik_sayisi_uyumu -> İHLAL: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3)
+2026-11-17 21:34:28.081 | ERROR    | iris_pca_aop.aop | ! PCA.transform alan hatası: DataValidationError: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')
+2026-11-17 21:34:28.082 | ERROR    | iris_pca_aop.aop | x- [#41] PCA.transform BAŞARISIZ: DataValidationError: Öznitelik sayısı eğitimdekiyle aynı olmalı (beklenen=4, gelen=3, kural='oznitelik_sayisi_uyumu', asama='pre')
+2026-11-17 21:34:28.085 | WARNING  | iris_pca_aop.aop | ! IrisDataLoader.load geçici hata (OSError: Ağ sürücüsüne geçici olarak erişilemedi) -> 2. deneme 0.05 sn sonra
+2026-11-17 21:34:28.136 | WARNING  | iris_pca_aop.aop | ! IrisDataLoader.load geçici hata (OSError: Ağ sürücüsüne geçici olarak erişilemedi) -> 3. deneme 0.10 sn sonra
+2026-11-17 21:34:28.260 | ERROR    | iris_pca_aop.aop | ! IrisVisualizer.plot_correlation_matrix başarısız oldu, yedek davranış uygulanıyor: KeyError: "None of [Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='object')] are in the [columns]"
+Traceback (most recent call last):
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\aspects\error_handling_aspect.py", line 93, in around
+    return proceed()
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 65, in <lambda>
+    return aspects[index].around(jp, lambda: invoke(index + 1))
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 63, in invoke
+    return func(target, *jp.args, **jp.kwargs)
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\visualization\plots.py", line 87, in plot_correlation_matrix
+    corr = frame[FEATURE_COLUMNS].corr().to_numpy()
+  File "C:\Python310\lib\site-packages\pandas\core\frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+  File "C:\Python310\lib\site-packages\pandas\core\indexes\base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Python310\lib\site-packages\pandas\core\indexes\base.py", line 6261, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='object')] are in the [columns]"
+2026-11-17 21:34:28.275 | ERROR    | iris_pca_aop.aop | ! StandardScaler.fit beklenmeyen hata: ValueError: could not convert string to float: 'bu bir matris değil'
+Traceback (most recent call last):
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\aspects\error_handling_aspect.py", line 93, in around
+    return proceed()
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 65, in <lambda>
+    return aspects[index].around(jp, lambda: invoke(index + 1))
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\aop\weaver.py", line 63, in invoke
+    return func(target, *jp.args, **jp.kwargs)
+  File "C:\Users\Çınar\Desktop\3 aralık nesneye yönelik prog\iris-pca-aop\iris_pca_aop\data\preprocessing.py", line 29, in fit
+    X = np.asarray(X, dtype=float)
+ValueError: could not convert string to float: 'bu bir matris değil'
+2026-11-17 21:34:28.281 | ERROR    | iris_pca_aop.aop | x- [#44] StandardScaler.fit BAŞARISIZ: PipelineError: StandardScaler.fit çalışırken beklenmeyen hata oluştu (hata_tipi='ValueError', deneme=1)
